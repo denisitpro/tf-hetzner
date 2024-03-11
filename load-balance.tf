@@ -28,4 +28,11 @@ resource "hcloud_load_balancer_service" "load_balancer_service_6443" {
   protocol         = "tcp"
   listen_port      = "6443"
   destination_port = "6443"
+  health_check {
+    protocol = "tcp"
+    port     = 6443
+    interval = 5
+    timeout  = 1
+    retries  = 5
+  }
 }
