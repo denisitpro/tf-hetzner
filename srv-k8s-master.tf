@@ -17,5 +17,5 @@ resource "hcloud_server" "k8s_master" {
     ipv4 = hcloud_primary_ip.k8s_master_ipv4[count.index].id
     ipv6 = hcloud_primary_ip.k8s_master_ipv6[count.index].id
   }
-  depends_on = [hcloud_primary_ip.k8s_master_ipv4]
+  depends_on = [hcloud_primary_ip.k8s_master_ipv4, hcloud_primary_ip.k8s_master_ipv6]
 }
