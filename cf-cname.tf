@@ -14,3 +14,12 @@ resource "cloudflare_record" "vault" {
   type    = "CNAME"
   proxied = true
 }
+
+
+resource "cloudflare_record" "alfa_w01" {
+  zone_id = local.current_cf_zone_id
+  name    = "alfa"
+  value   = cloudflare_record.k8s_worker_ipv4[0].hostname
+  type    = "CNAME"
+  proxied = true
+}
