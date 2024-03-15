@@ -32,3 +32,11 @@ resource "cloudflare_record" "beta_w01" {
   proxied = true
 }
 
+
+resource "cloudflare_record" "delta_w01" {
+  zone_id = local.current_cf_zone_id
+  name    = "delta"
+  value   = cloudflare_record.k8s_worker_ipv4[0].hostname
+  type    = "CNAME"
+  proxied = false
+}
