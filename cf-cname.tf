@@ -40,3 +40,12 @@ resource "cloudflare_record" "delta_w01" {
   type    = "CNAME"
   proxied = false
 }
+
+
+resource "cloudflare_record" "fox_w01" {
+  zone_id = local.current_cf_zone_id
+  name    = "fox"
+  value   = cloudflare_record.k8s_worker_ipv4[0].hostname
+  type    = "CNAME"
+  proxied = false
+}
