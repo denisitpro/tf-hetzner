@@ -1,16 +1,16 @@
 resource "cloudflare_record" "grafana" {
   zone_id = local.current_cf_zone_id
   name    = "grafana"
-  value   = cloudflare_record.k8s_balancer_ipv4.hostname
+  value   = cloudflare_record.k8s_worker_ipv4[0].hostname
   type    = "CNAME"
-  proxied = true
+  proxied = false
 }
 
 
 resource "cloudflare_record" "vault" {
   zone_id = local.current_cf_zone_id
   name    = "vault"
-  value   = cloudflare_record.k8s_balancer_ipv4.hostname
+  value   = cloudflare_record.k8s_worker_ipv4[0].hostname
   type    = "CNAME"
   proxied = true
 }
