@@ -12,7 +12,7 @@ resource "cloudflare_record" "vault" {
   name    = "vault"
   value   = cloudflare_record.k8s_worker_ipv4[0].hostname
   type    = "CNAME"
-  proxied = true
+  proxied = false
 }
 
 
