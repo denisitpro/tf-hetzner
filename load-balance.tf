@@ -16,12 +16,12 @@ resource "hcloud_load_balancer_target" "load_balancer_target" {
 }
 
 # todo remove - need for debug load balancer
-resource "hcloud_load_balancer_service" "load_balancer_service_22" {
-  load_balancer_id = hcloud_load_balancer.k8s_balancer.id
-  protocol         = "tcp"
-  listen_port      = "22"
-  destination_port = "22"
-}
+#resource "hcloud_load_balancer_service" "load_balancer_service_22" {
+#  load_balancer_id = hcloud_load_balancer.k8s_balancer.id
+#  protocol         = "tcp"
+#  listen_port      = "22"
+#  destination_port = "22"
+#}
 
 resource "hcloud_load_balancer_service" "load_balancer_service_6443" {
   load_balancer_id = hcloud_load_balancer.k8s_balancer.id
@@ -37,30 +37,30 @@ resource "hcloud_load_balancer_service" "load_balancer_service_6443" {
   }
 }
 
-resource "hcloud_load_balancer_service" "load_balancer_service_443" {
-  load_balancer_id = hcloud_load_balancer.k8s_balancer.id
-  protocol         = "tcp"
-  listen_port      = "443"
-  destination_port = "443"
-  health_check {
-    protocol = "tcp"
-    port     = 443
-    interval = 30
-    timeout  = 1
-    retries  = 5
-  }
-}
+#resource "hcloud_load_balancer_service" "load_balancer_service_443" {
+#  load_balancer_id = hcloud_load_balancer.k8s_balancer.id
+#  protocol         = "tcp"
+#  listen_port      = "443"
+#  destination_port = "443"
+#  health_check {
+#    protocol = "tcp"
+#    port     = 443
+#    interval = 30
+#    timeout  = 1
+#    retries  = 5
+#  }
+#}
 
-resource "hcloud_load_balancer_service" "load_balancer_service_80" {
-  load_balancer_id = hcloud_load_balancer.k8s_balancer.id
-  protocol         = "tcp"
-  listen_port      = "80"
-  destination_port = "80"
-  health_check {
-    protocol = "tcp"
-    port     = 80
-    interval = 30
-    timeout  = 1
-    retries  = 5
-  }
-}
+#resource "hcloud_load_balancer_service" "load_balancer_service_80" {
+#  load_balancer_id = hcloud_load_balancer.k8s_balancer.id
+#  protocol         = "tcp"
+#  listen_port      = "80"
+#  destination_port = "80"
+#  health_check {
+#    protocol = "tcp"
+#    port     = 80
+#    interval = 30
+#    timeout  = 1
+#    retries  = 5
+#  }
+#}
