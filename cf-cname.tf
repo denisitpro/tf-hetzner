@@ -29,7 +29,7 @@ resource "cloudflare_record" "beta" {
   name    = "beta"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
-  proxied = true
+  proxied = false
 }
 
 
