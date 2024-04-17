@@ -49,3 +49,20 @@ resource "cloudflare_record" "fox" {
   type    = "CNAME"
   proxied = false
 }
+
+
+resource "cloudflare_record" "argocd" {
+  zone_id = local.current_cf_zone_id
+  name    = "argocd"
+  value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
+  type    = "CNAME"
+  proxied = false
+}
+
+resource "cloudflare_record" "grpc_argocd" {
+  zone_id = local.current_cf_zone_id
+  name    = "grpc.argocd"
+  value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
+  type    = "CNAME"
+  proxied = false
+}
