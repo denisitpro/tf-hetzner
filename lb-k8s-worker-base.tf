@@ -19,10 +19,10 @@ resource "hcloud_load_balancer_service" "k8s_worker_lb_service_80" {
   load_balancer_id = hcloud_load_balancer.k8s_worker_lb.id
   protocol         = "tcp"
   listen_port      = "80"
-  destination_port = "31027" # port  svc nginx-ingress-ingress-nginx-controller
+  destination_port = "30313" # port  svc nginx-ingress-ingress-nginx-controller
   health_check {
     protocol = "tcp"
-    port     = 31027
+    port     = 30313
     interval = 30
     timeout  = 1
     retries  = 5
@@ -33,10 +33,10 @@ resource "hcloud_load_balancer_service" "k8s_worker_lb_service_443" {
   load_balancer_id = hcloud_load_balancer.k8s_worker_lb.id
   protocol         = "tcp"
   listen_port      = "443"
-  destination_port = "31515"
+  destination_port = "32596"
   health_check {
     protocol = "tcp"
-    port     = 31515
+    port     = 32596
     interval = 30
     timeout  = 1
     retries  = 5
