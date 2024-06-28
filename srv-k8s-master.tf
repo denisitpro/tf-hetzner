@@ -1,5 +1,5 @@
 resource "hcloud_server" "k8s_master" {
-  count       = 3
+  count       = 5
   name        = "k8s-${format("%02d", count.index + 1)}"
   server_type = "cx22"
   image       = "ubuntu-22.04"
@@ -13,9 +13,9 @@ resource "hcloud_server" "k8s_master" {
     ignore_changes = [user_data, image]
   }
 
-  public_net {
-    ipv4 = hcloud_primary_ip.k8s_master_ipv4[count.index].id
-    ipv6 = hcloud_primary_ip.k8s_master_ipv6[count.index].id
-  }
-  depends_on = [hcloud_primary_ip.k8s_master_ipv4, hcloud_primary_ip.k8s_master_ipv6]
+  #   public_net {
+  #     ipv4 = hcloud_primary_ip.k8s_master_ipv4[count.index].id
+  #     ipv6 = hcloud_primary_ip.k8s_master_ipv6[count.index].id
+  #   }
+  #   depends_on = [hcloud_primary_ip.k8s_master_ipv4, hcloud_primary_ip.k8s_master_ipv6]
 }
