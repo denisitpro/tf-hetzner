@@ -1,7 +1,7 @@
 resource "hcloud_server" "k8s_master" {
-  count       = 5
+  count       = 3
   name        = "k8s-${format("%02d", count.index + 1)}"
-  server_type = "cx22"
+  server_type = "cpx21"
   image       = "ubuntu-22.04"
   location    = "fsn1"
   ssh_keys = [
