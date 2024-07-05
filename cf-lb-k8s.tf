@@ -3,6 +3,7 @@ resource "cloudflare_record" "k8s_master_lb_ipv4" {
   name            = "k8s"
   value           = hcloud_load_balancer.k8s_master_lb.ipv4
   type            = "A"
+  ttl             = 300
   proxied         = false
   allow_overwrite = true
 }
@@ -12,6 +13,7 @@ resource "cloudflare_record" "k8s_master_lb_ipv6" {
   name            = "k8s"
   value           = hcloud_load_balancer.k8s_master_lb.ipv6
   type            = "AAAA"
+  ttl             = 300
   proxied         = false
   allow_overwrite = true
 }
@@ -22,6 +24,7 @@ resource "cloudflare_record" "k8s_worker_lb_ipv4" {
   name            = "worker"
   value           = hcloud_load_balancer.k8s_worker_lb_v2.ipv4
   type            = "A"
+  ttl             = 300
   proxied         = false
   allow_overwrite = true
 }
@@ -31,6 +34,7 @@ resource "cloudflare_record" "k8s_worker_lb_ipv6" {
   name            = "worker"
   value           = hcloud_load_balancer.k8s_worker_lb_v2.ipv6
   type            = "AAAA"
+  ttl             = 300
   proxied         = false
   allow_overwrite = true
 }

@@ -3,6 +3,7 @@ resource "cloudflare_record" "grafana" {
   name    = "grafana"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -12,6 +13,7 @@ resource "cloudflare_record" "vault" {
   name    = "vault"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -21,6 +23,7 @@ resource "cloudflare_record" "alfa" {
   name    = "alfa"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  #  ttl     = 300
   proxied = true
 }
 
@@ -29,6 +32,7 @@ resource "cloudflare_record" "beta" {
   name    = "beta"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -38,6 +42,7 @@ resource "cloudflare_record" "delta" {
   name    = "delta"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -47,6 +52,7 @@ resource "cloudflare_record" "fox" {
   name    = "fox"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -56,6 +62,7 @@ resource "cloudflare_record" "argocd" {
   name    = "argocd"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -64,6 +71,7 @@ resource "cloudflare_record" "grpc_argocd" {
   name    = "grpc.argocd"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
 
@@ -72,5 +80,6 @@ resource "cloudflare_record" "loki" {
   name    = "loki"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
+  ttl     = 300
   proxied = false
 }
