@@ -13,8 +13,8 @@ resource "cloudflare_record" "vault" {
   name    = "vault"
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
-  ttl     = 300
-  proxied = false
+  ttl     = 1
+  proxied = true
 }
 
 
@@ -24,7 +24,7 @@ resource "cloudflare_record" "alfa" {
   value   = cloudflare_record.k8s_worker_lb_ipv4.hostname
   type    = "CNAME"
   #  ttl     = 300
-  proxied = true
+  proxied = false
 }
 
 resource "cloudflare_record" "beta" {
