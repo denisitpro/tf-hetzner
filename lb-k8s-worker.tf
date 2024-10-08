@@ -1,12 +1,12 @@
-resource "hcloud_load_balancer" "k8s_worker_lb_v2" {
-  name               = "k8s-worker-lb"
-  load_balancer_type = "lb11"
-  location           = "fsn1"
-  #  algorithm          = "round_robin"
-  labels = {
-    "env" : "dev"
-  }
-}
+# resource "hcloud_load_balancer" "k8s_worker_lb_v2" {
+#   name               = "k8s-worker-lb"
+#   load_balancer_type = "lb11"
+#   location           = "fsn1"
+#   #  algorithm          = "round_robin"
+#   labels = {
+#     "env" : "dev"
+#   }
+# }
 #
 # resource "hcloud_load_balancer_target" "k8s_worker_lb_target" {
 #   count            = length(hcloud_server.k8s_worker)
