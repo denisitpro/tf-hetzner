@@ -13,6 +13,13 @@ resource "hcloud_server" "k8s_master" {
     ignore_changes = [user_data, image]
   }
 
+  network {
+    network_id = hcloud_network.k8s_private_net.id
+    ip         = "10.15.1.${count.index + 1}"
+  }
+  depends_on = [
+    hcloud_network_subnet.k8s_master_net
+  ]
   #   public_net {
   #     ipv4 = hcloud_primary_ip.k8s_master_ipv4[count.index].id
   #     ipv6 = hcloud_primary_ip.k8s_master_ipv6[count.index].id
