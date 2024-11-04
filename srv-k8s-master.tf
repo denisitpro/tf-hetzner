@@ -1,6 +1,6 @@
 resource "hcloud_server" "k8s_master" {
   count       = 3
-  name        = "k8s-${format("%02d", count.index + 1)}"
+  name        = "k8s-local-${format("%02d", count.index + 1)}"
   server_type = "cx22"
   image       = "ubuntu-24.04"
   location    = "fsn1"
