@@ -7,7 +7,6 @@ resource "cloudflare_record" "k8s_master_ipv4" {
   ttl             = 300
   proxied         = false
   allow_overwrite = true
-
 }
 
 resource "cloudflare_record" "k8s_master_ipv6" {
@@ -37,6 +36,30 @@ resource "cloudflare_record" "k8s_worker_ipv6" {
   count           = length(hcloud_server.k8s_worker)
   name            = hcloud_server.k8s_worker[count.index].name
   content         = hcloud_server.k8s_worker[count.index].ipv6_address
+  type            = "AAAA"
+  ttl             = 300
+  proxied         = false
+  allow_overwrite = true
+}
+
+
+
+resource "cloudflare_record" "haproxy_lb_ipv4" {
+  zone_id         = local.current_cf_zone_id
+  count           = length(hcloud_server.haproxy_lb)
+  name            = hcloud_server.haproxy_lb[count.index].name
+  content         = hcloud_server.haproxy_lb[count.index].ipv4_address
+  type            = "A"
+  ttl             = 300
+  proxied         = false
+  allow_overwrite = true
+}
+
+resource "cloudflare_record" "haproxy_lb_ipv6" {
+  zone_id         = local.current_cf_zone_id
+  count           = length(hcloud_server.haproxy_lb)
+  name            = hcloud_server.haproxy_lb[count.index].name
+  content         = hcloud_server.haproxy_lb[count.index].ipv6_address
   type            = "AAAA"
   ttl             = 300
   proxied         = false
