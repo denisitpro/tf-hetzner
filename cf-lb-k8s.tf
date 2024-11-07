@@ -17,8 +17,8 @@
 #   proxied         = false
 #   allow_overwrite = true
 # }
-#
-#
+
+
 # # resource "cloudflare_record" "k8s_worker_lb_ipv4" {
 # #   zone_id         = local.current_cf_zone_id
 # #   name            = "worker"
