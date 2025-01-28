@@ -1,5 +1,5 @@
 resource "hcloud_server" "swfs_volume" {
-  count       = 2
+  count       = 3
   name        = "swfs-volume-${format("%02d", count.index + 20)}"
   server_type = "cx22"
   image       = "ubuntu-24.04"
