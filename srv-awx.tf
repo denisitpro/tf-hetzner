@@ -1,6 +1,6 @@
-resource "hcloud_server" "k8s_worker" {
-  count       = 2
-  name        = "w-${format("%02d", count.index + 1)}"
+resource "hcloud_server" "awx" {
+  count       = 1
+  name        = "awx-${format("%02d", count.index + 1)}"
   server_type = "cx22"
   image       = "ubuntu-24.04"
   location    = "fsn1"
@@ -17,14 +17,5 @@ resource "hcloud_server" "k8s_worker" {
     ipv4_enabled = true
     ipv6_enabled = true
   }
-
-  #   network {
-  #     network_id = hcloud_network.k8s_private_net.id
-  #     ip         = "10.15.2.${count.index + 1}"
-  #   }
-  #   depends_on = [
-  #     hcloud_network_subnet.k8s_worker_net
-  #   ]
-
 }
 
