@@ -41,51 +41,51 @@ resource "cloudflare_record" "k8s_worker_ipv6" {
   proxied         = false
   allow_overwrite = true
 }
-#
-# resource "cloudflare_record" "teleport_full_ipv4" {
-#   zone_id         = local.current_cf_zone_id
-#   count           = length(hcloud_server.teleport)
-#   name            = hcloud_server.teleport[count.index].name
-#   content         = hcloud_server.teleport[count.index].ipv4_address
-#   type            = "A"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
-#
-#
-# resource "cloudflare_record" "teleport_full_ipv6" {
-#   zone_id         = local.current_cf_zone_id
-#   count           = length(hcloud_server.teleport)
-#   name            = hcloud_server.teleport[count.index].name
-#   content         = hcloud_server.teleport[count.index].ipv6_address
-#   type            = "AAAA"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
-#
-#
-# resource "cloudflare_record" "build_full_ipv4" {
-#   zone_id         = local.current_cf_zone_id
-#   count           = length(hcloud_server.build_srv)
-#   name            = hcloud_server.build_srv[count.index].name
-#   content         = hcloud_server.build_srv[count.index].ipv4_address
-#   type            = "A"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
-#
-#
-# resource "cloudflare_record" "build_full_ipv6" {
-#   zone_id         = local.current_cf_zone_id
-#   count           = length(hcloud_server.build_srv)
-#   name            = hcloud_server.build_srv[count.index].name
-#   content         = hcloud_server.build_srv[count.index].ipv6_address
-#   type            = "AAAA"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
+# #
+# # resource "cloudflare_record" "teleport_full_ipv4" {
+# #   zone_id         = local.current_cf_zone_id
+# #   count           = length(hcloud_server.teleport)
+# #   name            = hcloud_server.teleport[count.index].name
+# #   content         = hcloud_server.teleport[count.index].ipv4_address
+# #   type            = "A"
+# #   ttl             = 300
+# #   proxied         = false
+# #   allow_overwrite = true
+# # }
+# #
+# #
+# # resource "cloudflare_record" "teleport_full_ipv6" {
+# #   zone_id         = local.current_cf_zone_id
+# #   count           = length(hcloud_server.teleport)
+# #   name            = hcloud_server.teleport[count.index].name
+# #   content         = hcloud_server.teleport[count.index].ipv6_address
+# #   type            = "AAAA"
+# #   ttl             = 300
+# #   proxied         = false
+# #   allow_overwrite = true
+# # }
+# #
+# #
+# # resource "cloudflare_record" "build_full_ipv4" {
+# #   zone_id         = local.current_cf_zone_id
+# #   count           = length(hcloud_server.build_srv)
+# #   name            = hcloud_server.build_srv[count.index].name
+# #   content         = hcloud_server.build_srv[count.index].ipv4_address
+# #   type            = "A"
+# #   ttl             = 300
+# #   proxied         = false
+# #   allow_overwrite = true
+# # }
+# #
+# #
+# # resource "cloudflare_record" "build_full_ipv6" {
+# #   zone_id         = local.current_cf_zone_id
+# #   count           = length(hcloud_server.build_srv)
+# #   name            = hcloud_server.build_srv[count.index].name
+# #   content         = hcloud_server.build_srv[count.index].ipv6_address
+# #   type            = "AAAA"
+# #   ttl             = 300
+# #   proxied         = false
+# #   allow_overwrite = true
+# # }
 
