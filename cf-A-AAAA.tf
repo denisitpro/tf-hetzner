@@ -42,41 +42,6 @@ resource "cloudflare_record" "k8s_worker_ipv6" {
   allow_overwrite = true
 }
 #
-# resource "cloudflare_record" "haproxy_lb_ipv4" {
-#   zone_id         = local.current_cf_zone_id
-#   count           = length(hcloud_server.haproxy_lb)
-#   name            = hcloud_server.haproxy_lb[count.index].name
-#   content         = hcloud_server.haproxy_lb[count.index].ipv4_address
-#   type            = "A"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
-#
-# resource "cloudflare_record" "haproxy_lb_local_ipv4" {
-#   zone_id = local.current_cf_zone_id
-#   count   = length(hcloud_server.haproxy_lb)
-#   name    = "k8s-lb-local-${format("%02d", count.index + 1)}"
-#   #   content         = hcloud_server.haproxy_lb[count.index].ipv4_address
-#   content         = (tolist([for net in hcloud_server.haproxy_lb[count.index].network : net.ip]))[0]
-#   type            = "A"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
-#
-# resource "cloudflare_record" "haproxy_lb_ipv6" {
-#   zone_id         = local.current_cf_zone_id
-#   count           = length(hcloud_server.haproxy_lb)
-#   name            = hcloud_server.haproxy_lb[count.index].name
-#   content         = hcloud_server.haproxy_lb[count.index].ipv6_address
-#   type            = "AAAA"
-#   ttl             = 300
-#   proxied         = false
-#   allow_overwrite = true
-# }
-#
-#
 # resource "cloudflare_record" "teleport_full_ipv4" {
 #   zone_id         = local.current_cf_zone_id
 #   count           = length(hcloud_server.teleport)
@@ -124,48 +89,3 @@ resource "cloudflare_record" "k8s_worker_ipv6" {
 #   allow_overwrite = true
 # }
 
-
-resource "cloudflare_record" "swfs_master_ip4" {
-  zone_id         = local.current_cf_zone_id
-  count           = length(hcloud_server.swfs_master)
-  name            = hcloud_server.swfs_master[count.index].name
-  content         = hcloud_server.swfs_master[count.index].ipv4_address
-  type            = "A"
-  ttl             = 300
-  proxied         = false
-  allow_overwrite = true
-}
-
-
-resource "cloudflare_record" "swfs_master_ipv6" {
-  zone_id         = local.current_cf_zone_id
-  count           = length(hcloud_server.swfs_master)
-  name            = hcloud_server.swfs_master[count.index].name
-  content         = hcloud_server.swfs_master[count.index].ipv6_address
-  type            = "AAAA"
-  ttl             = 300
-  proxied         = false
-  allow_overwrite = true
-}
-
-resource "cloudflare_record" "swfs_volume_ip4" {
-  zone_id         = local.current_cf_zone_id
-  count           = length(hcloud_server.swfs_volume)
-  name            = hcloud_server.swfs_volume[count.index].name
-  content         = hcloud_server.swfs_volume[count.index].ipv4_address
-  type            = "A"
-  ttl             = 300
-  proxied         = false
-  allow_overwrite = true
-}
-
-resource "cloudflare_record" "swfs_volume_ipv6" {
-  zone_id         = local.current_cf_zone_id
-  count           = length(hcloud_server.swfs_volume)
-  name            = hcloud_server.swfs_volume[count.index].name
-  content         = hcloud_server.swfs_volume[count.index].ipv6_address
-  type            = "AAAA"
-  ttl             = 300
-  proxied         = false
-  allow_overwrite = true
-}
