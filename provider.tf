@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.5.0"
+  required_version = ">= 1.10.0"
 
   required_providers {
     cloudflare = {
@@ -8,7 +8,7 @@ terraform {
     }
     hcloud = {
       source  = "hetznercloud/hcloud"
-      version = "1.48.1"
+      version = "1.49.1"
     }
   }
 }
