@@ -1,5 +1,5 @@
 resource "hcloud_server" "k8s_worker" {
-  count       = 2
+  count       = 1
   name        = "w-${format("%02d", count.index + 1)}"
   server_type = "cx22"
   image       = "ubuntu-24.04"
