@@ -1,5 +1,5 @@
 #
-# resource "cloudflare_record" "haproxy_lb_ipv4" {
+# resource "cloudflare_dns_record" "haproxy_lb_ipv4" {
 #   zone_id         = local.current_cf_zone_id
 #   count           = length(hcloud_server.haproxy_lb)
 #   name            = hcloud_server.haproxy_lb[count.index].name
@@ -7,10 +7,10 @@
 #   type            = "A"
 #   ttl             = 300
 #   proxied         = false
-#   allow_overwrite = true
+#
 # }
 #
-# resource "cloudflare_record" "haproxy_lb_local_ipv4" {
+# resource "cloudflare_dns_record" "haproxy_lb_local_ipv4" {
 #   zone_id = local.current_cf_zone_id
 #   count   = length(hcloud_server.haproxy_lb)
 #   name    = "k8s-lb-local-${format("%02d", count.index + 1)}"
@@ -19,10 +19,10 @@
 #   type            = "A"
 #   ttl             = 300
 #   proxied         = false
-#   allow_overwrite = true
+#
 # }
 #
-# resource "cloudflare_record" "haproxy_lb_ipv6" {
+# resource "cloudflare_dns_record" "haproxy_lb_ipv6" {
 #   zone_id         = local.current_cf_zone_id
 #   count           = length(hcloud_server.haproxy_lb)
 #   name            = hcloud_server.haproxy_lb[count.index].name
@@ -30,5 +30,5 @@
 #   type            = "AAAA"
 #   ttl             = 300
 #   proxied         = false
-#   allow_overwrite = true
+#
 # }
