@@ -83,3 +83,13 @@
 #   ttl     = 300
 #   proxied = false
 # }
+
+resource "cloudflare_dns_record" "k8s_master_lb_v2" {
+  zone_id = local.current_cf_zone_id
+  name    = "k8s-lb-02"
+  content = "${cloudflare_dns_record.k8s_master_lb_ipv4.name}.${var.default_zone_name}"
+  type    = "CNAME"
+  ttl     = 300
+  proxied = false
+}
+
