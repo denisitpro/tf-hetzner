@@ -27,6 +27,7 @@ No modules.
 | [cloudflare_dns_record.k8s_master_lb_ipv4](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.k8s_master_lb_ipv6](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.k8s_master_lb_v2](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.k8s_master_lb_v3](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.k8s_worker_ipv4](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.k8s_worker_ipv6](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
 | [hcloud_load_balancer.k8s_master_lb](https://registry.terraform.io/providers/hetznercloud/hcloud/1.49.1/docs/resources/load_balancer) | resource |
