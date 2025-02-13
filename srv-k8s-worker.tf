@@ -1,5 +1,5 @@
 resource "hcloud_server" "k8s_worker" {
-  count       = 2
+  count       = 4
   name        = "w-${format("%02d", count.index + 1)}"
   server_type = "cx22"
   image       = "ubuntu-24.04"
@@ -17,6 +17,4 @@ resource "hcloud_server" "k8s_worker" {
     ipv4_enabled = true
     ipv6_enabled = true
   }
-
 }
-
