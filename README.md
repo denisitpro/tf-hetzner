@@ -22,12 +22,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [cloudflare_dns_record.linstor_controller_ipv4](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.linstor_controller_ipv6](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.linstor_sattelites_ipv4](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.linstor_sattelites_ipv6](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/resources/dns_record) | resource |
-| [hcloud_server.linstor_controller](https://registry.terraform.io/providers/hetznercloud/hcloud/1.49.1/docs/resources/server) | resource |
-| [hcloud_server.linstor_sattelites](https://registry.terraform.io/providers/hetznercloud/hcloud/1.49.1/docs/resources/server) | resource |
+| [hcloud_server.k8s_master](https://registry.terraform.io/providers/hetznercloud/hcloud/1.49.1/docs/resources/server) | resource |
+| [hcloud_server.k8s_worker](https://registry.terraform.io/providers/hetznercloud/hcloud/1.49.1/docs/resources/server) | resource |
 | [hcloud_ssh_key.den_ssh_key](https://registry.terraform.io/providers/hetznercloud/hcloud/1.49.1/docs/resources/ssh_key) | resource |
 | [cloudflare_zones.current_cf_zone_id](https://registry.terraform.io/providers/cloudflare/cloudflare/5.0.0/docs/data-sources/zones) | data source |
 
